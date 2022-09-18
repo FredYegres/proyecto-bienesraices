@@ -37,7 +37,14 @@ class Router {
         if($fn) {
             call_user_func($fn, $this);
         } else {
-            echo "Página no Encontrada";
+            $contenido = '
+                <div class="error-404">
+                    <h1>404</h1>
+                    <h2>Not Found</h2>
+                    <p>The resource requested could not be found on this server!</p>
+                </div>
+            ';
+            include __DIR__ . "/views/layout.php";
         }
     }
 
